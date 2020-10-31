@@ -31,12 +31,6 @@
                 $pagina[4]="cursos_lista.php";
                 $pagina[5]="disciplinas.php";
                 
-                // $pagina[3]="clientes.php";
-                // $pagina[4]="clientes_lista.php";
-
-                // $pagina[5]="produto.php";
-                // $pagina[6]="produtos_lista.php";
-                
                 if (empty($link) or (!file_exists($pagina[$link]))) {
                   include "home.php";
                 } else {
