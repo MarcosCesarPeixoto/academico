@@ -2,7 +2,7 @@
 <html lang="pt-br">
     <head>
         <meta charset="UTF-8">  
-        <link rel="stylesheet" href="estilos.css">
+        <link rel="stylesheet" href="/css/estilos.css">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
         <title>Sistema Acadêmico</title>
     </head>
@@ -26,7 +26,10 @@
                 }  
 
                 $pagina[1]="home.php";
-                // $pagina[2]="login.php";
+                $pagina[2]="alunos.php";
+                $pagina[3]="professores.php";
+                $pagina[4]="cursos_lista.php";
+                $pagina[5]="disciplinas.php";
                 
                 // $pagina[3]="clientes.php";
                 // $pagina[4]="clientes_lista.php";

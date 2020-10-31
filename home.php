@@ -11,12 +11,25 @@
     <div id="corpo">        
         <section>
             <article>
-                <header>
+                <!-- <header>
                     <h2>ATIVIDADE AVALIATIVA – Introdução ao HTML e HTML 5</h2> 
                     <h3>Instruções para desenvolvimento do trabalho</h3>
-                </header>
-                <table>            
-                    <tr name="conteudo" style="vertical-align: top;">
+                </header> -->
+                <table>
+                    <tr>
+                        <td id="icone-home">
+                            <a href=""><img src="\imagens\professor.webp" alt="Professor"/></a>
+                        </td>
+                        <td id="icone-home">
+                            <a href=""><img src="\imagens\secretaria.png" alt="Secretaria"/></a>
+                        </td>
+                        <td id="icone-home">
+                            <a href=""><img src="\imagens\aluno.png" alt="Aluno"/></a>
+                        </td>
+                    </tr>
+
+                    
+                    <!-- <tr name="conteudo" style="vertical-align: top;">
                         <td width=500>
                             <ol>
                                 <li>
@@ -49,11 +62,11 @@
                                 </li>                            
                             </ol>
                         </td>
-                    </tr>
+                    </tr> -->
                 </table>  
-                <footer>
+                <!-- <footer>
                     <p max-width="100" style="text-align:left">Professor <i>Silder Lamas Vecchi</i></p>
-                </footer>                       
+                </footer>                        -->
             </article>
         </section> 
     </div>       

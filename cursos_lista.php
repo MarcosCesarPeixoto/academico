@@ -2,11 +2,11 @@
 <html lang="pt-br">
     <head>
         <meta charset="UTF-8">  
-        <link rel="stylesheet" href="..\css\estilos.css">
+        <link rel="stylesheet" href="\css\estilos.css">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
         <?php 
-          include_once("../funcoes.php"); 
-          include_once("../conexao.php");
+          include_once("funcoes.php"); 
+          include_once("conexao.php");
           date_default_timezone_set('America/Sao_Paulo');
         ?> 
         <title>Programação Web I</title>
@@ -15,7 +15,7 @@
     <body>
 
             <div id="corpo">
-              <h2>Lista de Cursos</h2>
+              <h2 id="titulo-subpagina">Lista de Cursos</h2>
 
               <?php
                 $sql = "select * from cursos";
@@ -27,15 +27,17 @@
                 }
 
                 if ($cursos = mysqli_query($link, $sql)) {
-                    if(mysqli_num_rows($cursos) > 0) {
-                      echo "<table border='1'>"; 
+                    //if(mysqli_num_rows($cursos) > 0) {
+                      // echo "<table border='1'>";
+                      echo "<table"." id="."'tabela-listas'"." border='1'>";
                       echo "<tr><td>Código</td>"
                           ."<td>Nome</td>"
                           ."<td style=width:100px></td>"
                           ."<td style=width:100px></td>"
                           ."<td style=width:100px></td>"
-                          ."</tr>"; 
-                    }
+                          ."</tr>";
+
+                    //}
 
                     /* array associativo */
                     while ($row = mysqli_fetch_assoc($cursos)) {
@@ -50,9 +52,17 @@
                     }
                     echo "</table>";
 
+                    // if(mysqli_num_rows($cursos) = 0) {
+                    //   echo "<h3>Nenhum curso cadastrado</h3>";
+                    // }
+
                     mysqli_free_result($cursos);
                 }
-              ?>    
+              ?>
+             
+              <!-- <p>
+                  <input type="submit" value="Incluir Novo" style="background: #FFFFFF; font-weight: bold; font-size: 18px;">
+              </p> -->
 
             </div>
     </body>       
