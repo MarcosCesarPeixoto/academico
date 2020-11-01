@@ -19,6 +19,8 @@
                 $id=0;
             }  
 
+            echo "<h1> id recebido ".$id."!</h1>";
+
             $sql = "select * from cursos where id_curso = '$id'";
             $cursos = mysqli_query($link, $sql);
 
@@ -30,29 +32,28 @@
             if ($cursos = mysqli_query($link, $sql)) {
                 /* array associativo */
                 while ($row = mysqli_fetch_assoc($cursos)) {
-                    $id = $row["id_curso"];
+                    $id_curso = $row["id_curso"];
                     $curso = $row["curso"];
 
-                    $pagina[3]="curso.php";
-                    $link=3;
+                    echo "<h1> id do banco ".$id_curso."!</h1>";
+
+                    // $pagina[3]="curso.php";
+                    // $link=3;
                 }
 
                 mysqli_free_result($cursos);
             }
         ?> 
 
-        <!-- <form action="cursosDB.php?id=$id&tipo=2" method="POST"> -->
-        <form action="cursosDB.php?id=$id&tipo=2" method="POST">
+        <form action="cursosDB.php?tipo=2" method="POST">
             <h2>Alteração de Cursos</h2>
             <p> 
                 <!-- <table id="tabela-listas"> -->
                 <table>
                     <tr>
+                        <td></td>
                         <td>
-                            <label>Código:</label>
-                        </td>
-                        <td>
-                            <input name="id" value="<?php echo $id; ?>" size="10" disabled="">
+                            <input type="hidden" name="id" value="<?php echo $id; ?>" size="10">
                         </td>
                         <tr>
                             <td>
@@ -69,8 +70,7 @@
             <p>
                 <td>
                     <tr>
-                        <!-- <button type="submit" class="btn btn-danger">Gravar</button> -->
-                        <button class="btn btn-primary" type="submit">Gravar</button>                        
+                        <button class="btn btn-primary" type="submit">Gravar</button>
                     </tr>
                     <tr>
                         <a href="index.php?link=4" class="btn btn-success">Cancelar</a>

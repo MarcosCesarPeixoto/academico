@@ -22,10 +22,10 @@
             $sql = "select * from cursos where id_curso = '$id'";
             $cursos = mysqli_query($link, $sql);
 
-            // if (mysqli_connect_errno()) {
-            //     printf("Connect failed: %s\n", mysqli_connect_error());
-            //     exit();
-            // }
+            if (mysqli_connect_errno()) {
+                printf("Connect failed: %s\n", mysqli_connect_error());
+                exit();
+            }
 
             if ($cursos = mysqli_query($link, $sql)) {
                 /* array associativo */
@@ -33,8 +33,8 @@
                     $id = $row["id_curso"];
                     $curso = $row["curso"];
 
-                    $pagina[3]="curso.php";
-                    $link=3;
+                    // $pagina[3]="curso.php";
+                    // $link=3;
                 }
 
                 mysqli_free_result($cursos);
@@ -47,11 +47,9 @@
                 <!-- <table id="tabela-listas"> -->
                 <table>
                     <tr>
+                        <td></td>
                         <td>
-                            <label>Código:</label>
-                        </td>
-                        <td>
-                            <input name="id" value="<?php echo $id; ?>" size="10">
+                            <input type="hidden" name="id" value="<?php echo $id; ?>" size="10">
                         </td>
                         <tr>
                             <td>
