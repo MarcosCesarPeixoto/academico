@@ -32,47 +32,52 @@
                 while ($row = mysqli_fetch_assoc($cursos)) {
                     $id = $row["id_curso"];
                     $curso = $row["curso"];
-
-                    // $pagina[3]="curso.php";
-                    // $link=3;
                 }
 
                 mysqli_free_result($cursos);
             }
         ?> 
 
-        <form action="cursosDB.php?id=$id&tipo=3" method="POST">
-            <h2>Exclusão de Cursos</h2>
-            <p> 
-                <!-- <table id="tabela-listas"> -->
-                <table>
-                    <tr>
-                        <td></td>
-                        <td>
-                            <input type="hidden" name="id" value="<?php echo $id; ?>" size="10">
-                        </td>
+        <form id="form-manipulacao" action="cursosDB.php?id=$id&tipo=3" method="POST">
+            <div>
+
+                <tr>
+                    <td id="col-titulo-subpagina">
+                        <h2 id="titulo-subpagina">Exclusão de Cursos</h2>
+                    </td>
+                </tr>
+
+                <p> 
+                    <table id="tabela-listas">
                         <tr>
+                            <td></td>
                             <td>
-                                <label>Curso:</label>
+                                <input type="hidden" name="id" value="<?php echo $id; ?>" size="10">
                             </td>
-                            <td>
-                                <input name="curso" value="<?php echo $curso; ?>" size="50">
-                            </td>
+                            <tr>
+                                <td>
+                                    <label>Curso:</label>
+                                </td>
+                                <td>
+                                    <input name="curso" value="<?php echo $curso; ?>" size="50">
+                                </td>
+                            </tr>
                         </tr>
+                    </table>
+                </p>
+
+                <table id="tabela-listas">
+                    <tr>
+                        <td>
+                            <button type="submit" class="btn btn-danger">Excluir</button>
+                        </td>
+                        <td>
+                            <a href="index.php?link=4" class="btn btn-success">Cancelar</a>
+                        </td>
                     </tr>
                 </table>
-            </p>
-
-            <p>
-                <td>
-                    <tr>
-                        <button type="submit" class="btn btn-danger">Excluir</button>
-                    </tr>
-                    <tr>
-                        <a href="index.php?link=4" class="btn btn-success">Cancelar</a>
-                    </tr>
-                </td>
-            </p>
+                
+            </div>
         </form>
     </body>       
 </html>

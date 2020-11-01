@@ -19,26 +19,21 @@
                 $id=0;
             }  
 
-            echo "<h1> id recebido ".$id."!</h1>";
+            // echo "<h1> id recebido ".$id."!</h1>";
 
             $sql = "select * from cursos where id_curso = '$id'";
             $cursos = mysqli_query($link, $sql);
 
-            // if (mysqli_connect_errno()) {
-            //     printf("Connect failed: %s\n", mysqli_connect_error());
-            //     exit();
-            // }
+            if (mysqli_connect_errno()) {
+                printf("Connect failed: %s\n", mysqli_connect_error());
+                exit();
+            }
 
             if ($cursos = mysqli_query($link, $sql)) {
                 /* array associativo */
                 while ($row = mysqli_fetch_assoc($cursos)) {
                     $id_curso = $row["id_curso"];
                     $curso = $row["curso"];
-
-                    echo "<h1> id do banco ".$id_curso."!</h1>";
-
-                    // $pagina[3]="curso.php";
-                    // $link=3;
                 }
 
                 mysqli_free_result($cursos);
@@ -46,37 +41,45 @@
         ?> 
 
         <form action="cursosDB.php?tipo=2" method="POST">
-            <h2>Alteração de Cursos</h2>
-            <p> 
-                <!-- <table id="tabela-listas"> -->
-                <table>
-                    <tr>
-                        <td></td>
-                        <td>
-                            <input type="hidden" name="id" value="<?php echo $id; ?>" size="10">
-                        </td>
-                        <tr>
-                            <td>
-                                <label>Curso:</label>
-                            </td>
-                            <td>
-                                <input name="curso" value="<?php echo $curso; ?>" size="50">
-                            </td>
-                        </tr>
-                    </tr>
-                </table>
-            </p>
+            <div>
 
-            <p>
-                <td>
-                    <tr>
-                        <button class="btn btn-primary" type="submit">Gravar</button>
-                    </tr>
-                    <tr>
-                        <a href="index.php?link=4" class="btn btn-success">Cancelar</a>
-                    </tr>
-                </td>
-            </p>
+              <tr>
+                  <td id="col-titulo-subpagina">
+                      <h2 id="titulo-subpagina">Alteração de Cursos</h2>
+                  </td>
+              </tr>        
+
+              <p> 
+                  <table id="tabela-listas">
+                      <tr>
+                          <td></td>
+                          <td>
+                              <input type="hidden" name="id" value="<?php echo $id; ?>" size="10">
+                          </td>
+                          <tr>
+                              <td>
+                                  <label>Curso:</label>
+                              </td>
+                              <td>
+                                  <input name="curso" value="<?php echo $curso; ?>" size="50">
+                              </td>
+                          </tr>
+                      </tr>
+                  </table>
+              </p>
+
+              <table id="tabela-listas">
+                  <tr>
+                      <td>
+                          <button class="btn btn-primary" type="submit">Gravar</button>
+                      </td>
+                      <td>
+                          <a href="index.php?link=4" class="btn btn-success">Cancelar</a>
+                      </td>
+                  </tr>
+              </table>
+
+            </div>
         </form>
     </body>       
 </html>

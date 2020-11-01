@@ -14,12 +14,6 @@
         <?php
             //echo var_dump($_GET, $_POST);
 
-            // if(isset($_GET['id'])){
-            //     $id=$_GET['id'];
-            // } else {
-            //     $id=0;
-            // }  
-
             if(isset($_GET['tipo'])){
                 $tipo = $_GET['tipo'];
             } else {

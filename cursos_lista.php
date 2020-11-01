@@ -15,67 +15,56 @@
 
     <body>
 
-            <div id="corpo">
-              
-              <table id="tabela-titulo">
-                <tr>
-                  <td id="col-titulo-subpagina">
-                    <h2 id="titulo-subpagina">Lista de Cursos</h2>
-                  </td>
-                  <td id="col-btn-novo">
-                    <a href="cursos_manipulacao.php?tipo=1" class="btn btn-success">Incluir Curso</a>
-                  </td>
-                </tr>
-              </table>
+      <div id="corpo">
+        
+        <table id="tabela-titulo">
+          <tr>
+            <td id="col-titulo-subpagina">
+              <h2 id="titulo-subpagina">Lista de Cursos</h2>
+            </td>
+            <td id="col-btn-novo">
+              <a href="cursos_manipulacao.php?tipo=1" class="btn btn-success">Incluir Curso</a>
+            </td>
+          </tr>
+        </table>
 
-              <?php
-                $sql = "select * from cursos";
-                $cursos = mysqli_query($link, $sql);
+        <?php
+          $sql = "select * from cursos";
+          $cursos = mysqli_query($link, $sql);
 
-                if (mysqli_connect_errno()) {
-                    printf("Connect failed: %s\n", mysqli_connect_error());
-                    exit();
-                }
+          if (mysqli_connect_errno()) {
+              printf("Connect failed: %s\n", mysqli_connect_error());
+              exit();
+          }
 
-                if ($cursos = mysqli_query($link, $sql)) {
-                    if(mysqli_num_rows($cursos) > 0) {
-                      echo "<table"." id="."'tabela-listas'"." border='1'>";
-                      echo "<tr><td>Código</td>"
-                          ."<td>Nome</td>"
-                          ."<td style=width:100px></td>"
-                          ."<td style=width:100px></td>"
-                          ."</tr>";
-                    } else {
-                      echo "<p id=".'msg-tab-vazia"><h4>Nenhum curso cadastrado</h4></p>';
-                    }
+          if ($cursos = mysqli_query($link, $sql)) {
+              if(mysqli_num_rows($cursos) > 0) {
+                echo "<table"." id="."'tabela-listas'"." border='1'>";
+                echo "<tr><td>Código</td>"
+                    ."<td>Nome</td>"
+                    ."<td style=width:100px></td>"
+                    ."<td style=width:100px></td>"
+                    ."</tr>";
+              } else {
+                echo "<p id=".'msg-tab-vazia"><h4>Nenhum curso cadastrado</h4></p>';
+              }
 
-                    /* array associativo */
-                    while ($row = mysqli_fetch_assoc($cursos)) {
-                        $id = $row["id_curso"];
+              /* array associativo */
+              while ($row = mysqli_fetch_assoc($cursos)) {
+                  $id = $row["id_curso"];
 
-                        echo "<tr><td>".$row["id_curso"]."</td>"
-                                ."<td>".$row["curso"]."</td>"
-                                ."<td><a href='cursos_alteracao.php?tipo=2&id=$id'>Ver ou Editar</a></td>"
-                                ."<td><a href='cursos_manipulacao.php?tipo=3&id=$id'&>Excluir</a></td>"
-                            ."</tr>";
-                    }
-                    echo "</table>";
+                  echo "<tr><td>".$row["id_curso"]."</td>"
+                          ."<td>".$row["curso"]."</td>"
+                          ."<td><a href='cursos_manipulacao.php?tipo=2&id=$id'&>Ver ou Editar</a></td>"
+                          ."<td><a href='cursos_manipulacao.php?tipo=3&id=$id'&>Excluir</a></td>"
+                      ."</tr>";
+              }
+              echo "</table>";
 
-                    mysqli_free_result($cursos);
-                }
-              ?>
-            </div>
-
-      <script>
-        function mostrar(elemento){
-        var display = document.getElementById(elemento).style.display;
-          if(display == "none"){
-              document.getElementById(elemento).style.display = 'block';
-          }else{
-              document.getElementById(elemento).style.display = 'none';
-          }    
-      }
-      </script>
+              mysqli_free_result($cursos);
+          }
+        ?>
+      </div>
 
       <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
