@@ -12,27 +12,39 @@
     </head>
 
     <body>
+        <!-- Verifica se passou o id na URL. Se afirmativo é uma Edição ou Exclusão
+        Carregar os dados e apresentar ao usuário -->
+        <!-- <php
+            if(isset($_GET['id'])){
+              echo "aqui"
+            } else {
+                $id=0;
+                $curso="";
+            }  
+
+        ?> -->
+
         <form action="cursosDB.php?id=$id&tipo=1" method="POST">
             <h2>Cadastro de Cursos</h2>
             <p>
-                <td>
-                    <tr>
+                <tr>
+                    <td>
                         <label>Curso:</label>
-                    </tr>
-                    <tr>
-                        <input name="curso" size="50">
-                    </tr>
+                    </td>
+                    <td>
+                        <input name="curso" size="50" value="<?php echo $curso; ?>">
+                    </td>
                 <td>
             </p>
 
             <p>
-                <td>
-                    <tr>
+                <tr>
+                    <td>
                         <button class="btn btn-primary" type="submit">Gravar Curso</button>
-                    </tr>
-                    <tr>
+                    </td>
+                    <td>
                         <a href="index.php?link=4" class="btn btn-success">Cancelar</a>
-                    </tr>
+                    </td>
                 </td>
             </p>
 
@@ -42,5 +54,12 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>            
 
+      <!-- <php
+        function exibir_mensagem() {
+            echo "Olá";
+        }
+      ?> -->
+
     </body>
+
 </html>

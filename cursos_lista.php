@@ -23,7 +23,7 @@
                     <h2 id="titulo-subpagina">Lista de Cursos</h2>
                   </td>
                   <td id="col-btn-novo">
-                    <a href="index.php?link=4" class="btn btn-success">Incuir Novo</a>
+                    <a href="index.php?link=4" class="btn btn-success">Incluir Curso</a>
                     <!-- <input type="submit" value="Incluir Novo" style="background: #FFFFFF; font-weight: bold; font-size: 18px;"> -->
                   </td>
                 </tr>
@@ -46,7 +46,6 @@
                           ."<td style=width:100px></td>"
                           ."<td style=width:100px></td>"
                           ."</tr>";
-
                     } else {
                       echo "<p id=".'msg-tab-vazia"><h4>Nenhum curso cadastrado</h4></p>';
                     }
@@ -57,8 +56,8 @@
 
                         echo "<tr><td>".$row["id_curso"]."</td>"
                                 ."<td>".$row["curso"]."</td>"
-                                ."<td><a href='produtos_alteracao.php?id=$id'>Ver ou Editar</a></td>"
-                                ."<td><a href='produtos_exclusao.php?id=$id'>Excluir</a></td>"
+                                ."<td><a href='cursos_alteracao.php?id=$id'>Ver ou Editar</a></td>"
+                                ."<td><a href='cursos_exclusao.php?id=$id'&tipo=3>Excluir</a></td>"
                             ."</tr>";
                     }
                     echo "</table>";
