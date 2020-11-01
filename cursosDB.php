@@ -21,15 +21,22 @@
             // }  
 
             if(isset($_GET['tipo'])){
-                $tipo=$_GET['tipo'];
+                $tipo = $_GET['tipo'];
             } else {
-                $tipo=0;
+                $tipo = 0;
+            }
+
+            if(isset($_GET['id'])){
+                $id = $_GET['id'];
             }
 
             if(isset($_POST['id'])){
-              $id = $_POST['id'];
+                $id = $_POST['id'];
             }
             $curso = $_POST['curso'];
+
+            echo "<h1> Curso ".$curso." - ID ".$id. "</h1>";
+
 
             // if(isset($_POST['tipo'])){
             //     $tipo = $_POST['tipo'];
@@ -41,7 +48,8 @@
                 $sql = "insert into cursos (curso) values ('$curso')";
                 $acao = "cadastrado";
             } else if ($tipo == 2) {
-                $sql = "update cursos set curso = '$curso' where id_curso = '$id'";
+                // $sql = "update cursos set curso = '$curso' where id_curso='$id'";
+                $sql = "update cursos set curso = 'XXX' where id_curso=12";
                 $acao = "alterado";
             } else if ($tipo == 3) {
                 $sql = "delete from cursos where id_curso='$id'";

@@ -23,8 +23,7 @@
                     <h2 id="titulo-subpagina">Lista de Cursos</h2>
                   </td>
                   <td id="col-btn-novo">
-                    <a href="index.php?link=4" class="btn btn-success">Incluir Curso</a>
-                    <!-- <input type="submit" value="Incluir Novo" style="background: #FFFFFF; font-weight: bold; font-size: 18px;"> -->
+                    <a href="cursos_manipulacao.php?tipo=1" class="btn btn-success">Incluir Curso</a>
                   </td>
                 </tr>
               </table>
@@ -56,8 +55,8 @@
 
                         echo "<tr><td>".$row["id_curso"]."</td>"
                                 ."<td>".$row["curso"]."</td>"
-                                ."<td><a href='cursos_alteracao.php?id=$id'>Ver ou Editar</a></td>"
-                                ."<td><a href='cursos_exclusao.php?id=$id'&tipo=3>Excluir</a></td>"
+                                ."<td><a href='cursos_alteracao.php?tipo=2&id=$id'>Ver ou Editar</a></td>"
+                                ."<td><a href='cursos_manipulacao.php?tipo=3&id=$id'&>Excluir</a></td>"
                             ."</tr>";
                     }
                     echo "</table>";

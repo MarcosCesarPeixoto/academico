@@ -14,15 +14,16 @@
     <body>
         <!-- Verifica se passou o id na URL. Se afirmativo é uma Edição ou Exclusão
         Carregar os dados e apresentar ao usuário -->
-        <!-- <php
+        <php
             if(isset($_GET['id'])){
               echo "aqui"
             } else {
                 $id=0;
                 $curso="";
             }  
-
-        ?> -->
+            $curso = '';
+        ?>
+        <!-- $curso = ''; -->
 
         <form action="cursosDB.php?id=$id&tipo=1" method="POST">
             <h2>Cadastro de Cursos</h2>
@@ -32,7 +33,7 @@
                         <label>Curso:</label>
                     </td>
                     <td>
-                        <input name="curso" size="50" value="<?php echo $curso; ?>">
+                        <input name="curso" size="50">
                     </td>
                 <td>
             </p>
