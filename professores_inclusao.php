@@ -12,16 +12,19 @@
     </head>
 
     <body>
-        <form action="alunosDB.php?id=$id&tipo=1" method="POST">
+        <form action="professoresDB.php?id=$id&tipo=1" method="POST">
             <div>
 
                 <tr>
                     <td id="col-titulo-subpagina">
-                        <h2 id="titulo-subpagina">Cadastro de Alunos</h2>
+                        <h2 id="titulo-subpagina">Cadastro de Professores</h2>
                     </td>
                 </tr>
                 <p>
                     <table id="tabela-listas">
+                        <td>
+                            <input type="hidden" name="id" >
+                        </td>
                         <tr>
                             <td>
                                 <label>Nome:</label>
@@ -35,11 +38,10 @@
                                 <label>CPF:</label>
                             </td>
                             <td>
-                                <input name="cpf" type="cpf" 
-                                       placeholder="999.999.999-99" 
-                                       pattern="\d{3}\.?\d{3}\.?\d{3}-?\d{2}" required>
+                                <input name="cpf" size="14" required>
                             </td>
                         </tr>
+
                         <tr>
                             <td>
                                 <label>RG:</label>
@@ -48,71 +50,31 @@
                                 <input name="rg" size="20">
                             </td>
                         </tr>
+
                         <tr>
                             <td>
                                 <label>Data de Nascimento:</label>
                             </td>
                             <td>
-                                <input name="data_nascimento" type="date" required>
+                                <input name="data_nascimento" type="date" >
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label>Salário:</label>
+                            </td>
+                            <td>
+                                <input name="salario" size="20">
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <label>Mâe:</label>
+                                <label>Formação Acadêmica:</label>
                             </td>
                             <td>
-                                <input name="mae" size="50">
+                                <textarea name="formacao_academica" cols="60" rows="10"></textarea>
                             </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label>Pai:</label>
-                            </td>
-                            <td>
-                                <input name="pai" size="50">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label>Estado:</label>
-                            </td>
-                            <td>
-                                <input name="estado" size="02">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label>Cidade:</label>
-                            </td>
-                            <td>
-                                <input name="cidade" size="30">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label>Bairro:</label>
-                            </td>
-                            <td>
-                                <input name="bairro" size="30">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label>Endereço:</label>
-                            </td>
-                            <td>
-                                <input name="endereco" size="50">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label>Telefone:</label>
-                            </td>
-                            <td>
-                                <input name="telefone" size="15" type="tel" 
-                                    placeholder="(xx)xxxx-xxxx" 
-                                    pattern="^\(?\d{2}\)?[\s-]?[\s9]?\d{4}-?\d{4}$">
-                            </td>                            
                         </tr>
                     </table>
                 </p>
@@ -124,7 +86,7 @@
                                 <button class="btn btn-primary" type="submit">Gravar</button>
                             </td>
                             <td>
-                                <a href="index.php?link=2" class="btn btn-success">Cancelar</a>
+                                <a href="index.php?link=3" class="btn btn-success">Cancelar</a>
                             </td>
                         </td>
                     </table>

@@ -15,26 +15,24 @@
 
             <div id="menu">
                 <?php include "menu.php" ?>
-            </div>    
+            </div>
 
             <div id="corpo">
               <?php  
-                if(isset($_GET['link'])){
-                  $link=$_GET['link'];
+                if(isset($_GET['tipo'])){
+                  $tipo=$_GET['tipo'];
                 } else {
-                  $link='';
-                }  
+                  $tipo='';
+                }
 
-                $pagina[1]="home.php";
-                $pagina[2]="alunos_lista.php";
-                $pagina[3]="professores_lista.php";
-                $pagina[4]="cursos_lista.php";
-                $pagina[5]="disciplinas.php";
+                $pagina[1]="professores_inclusao.php";
+                $pagina[2]="professores_alteracao.php";
+                $pagina[3]="professores_exclusao.php";
                 
-                if (empty($link) or (!file_exists($pagina[$link]))) {
+                if (empty($tipo) or (!file_exists($pagina[$tipo]))) {
                   include "home.php";
                 } else {
-                  include $pagina[$link]; 
+                  include $pagina[$tipo]; 
                 };
               ?>
             </div>

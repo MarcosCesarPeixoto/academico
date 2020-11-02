@@ -23,7 +23,7 @@
               <h2 id="titulo-subpagina">Professores Cadastrados</h2>
             </td>
             <td id="col-btn-novo">
-              <a href="alunos_manipulacao.php?tipo=1" class="btn btn-success">Incluir Professor</a>
+              <a href="professores_manipulacao.php?tipo=1" class="btn btn-success">Incluir</a>
             </td>
           </tr>
         </table>
@@ -44,7 +44,6 @@
                     ."<td>Nome</td>"
                     ."<td>CPF</td>"
                     ."<td>Nascimento</td>"
-                    ."<td>Mãe</td>"
                     ."<td style=width:100px></td>"
                     ."<td style=width:100px></td>"
                     ."</tr>";
@@ -54,15 +53,14 @@
 
               /* array associativo */
               while ($row = mysqli_fetch_assoc($professores)) {
-                  $id = $row["id_aluno"];
+                  $id = $row["id_prof"];
 
-                  echo "<tr><td>".$row["id_aluno"]."</td>"
+                  echo "<tr><td>".$row["id_prof"]."</td>"
                           ."<td>".$row["nome"]."</td>"
                           ."<td>".$row["cpf"]."</td>"
                           ."<td>".$row["data_nascimento"]."</td>"
-                          ."<td>".$row["mae"]."</td>"                          
-                          ."<td><a href='alunos_manipulacao.php?tipo=2&id=$id'&>Abrir</a></td>"
-                          ."<td><a href='alunos_manipulacao.php?tipo=3&id=$id'&>Excluir</a></td>"
+                          ."<td><a href='professores_manipulacao.php?tipo=2&id=$id'&>Abrir</a></td>"
+                          ."<td><a href='professores_manipulacao.php?tipo=3&id=$id'&>Excluir</a></td>"
                       ."</tr>";
               }
               echo "</table>";
