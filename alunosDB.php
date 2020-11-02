@@ -23,30 +23,41 @@
             if(isset($_POST['id'])){
                 $id = $_POST['id'];
             }
-            $curso = $_POST['curso'];
-
+            $nome = $_POST['nome'];
+            $cpf = $_POST['cpf'];
+            $rg = $_POST['rg'];
+            $data_nascimento = $_POST['data_nascimento'];
+            $mae = $_POST['mae'];
+            $pai = $_POST['pai'];
+            $estado = $_POST['estado'];
+            $cidade = $_POST['cidade'];
+            $bairro = $_POST['bairro'];
+            $endereco = $_POST['endereco'];
+            $telefone = $_POST['telefone'];
+            
             // echo "<h1> id recebido ".$id."!</h1>";
 
             if ($tipo == 1) {
-                $sql = "insert into cursos (curso) values ('$curso')";
+                $sql = "insert into aluno (nome, cpf, rg, data_nascimento, mae, pai, estado, cidade, bairro, endereco, telefone) values ('$nome', '$cpf', '$rg', '$data_nascimento', '$mae', '$pai', '$estado', '$cidade', '$bairro', '$endereco', '$telefone')";
                 $acao = "cadastrado";
             } else if ($tipo == 2) {
-                $sql = "update cursos set curso = '$curso' where id_curso='$id'";
+                $sql = "update aluno set nome='$nome', cpf='$cpf', rg='$rg', data_nascimento='$data_nascimento', mae='$mae', pai='$pai', estado='$estado',
+                cidade='$cidade', bairro='$bairro', endereco='$endereco', telefone='$telefone' where id_aluno='$id'";
                 $acao = "alterado";
             } else if ($tipo == 3) {
-                $sql = "delete from cursos where id_curso='$id'";
+                $sql = "delete from aluno where id_aluno='$id'";
                 $acao = "excluido";
             } else {
                echo "<h1 style=".'"color: red"'.">Tipo de Processo incompatível!'$tipo'</h1>";
                exit;
             }
 
-            //echo $sql;
+            echo $sql;
             if (mysqli_query($link, $sql)) {
                 if (mysqli_affected_rows($link) > 0) {
-                    echo "<h1> Curso ".$acao." com sucesso!</h1>";
+                    echo "<h1> Aluno ".$acao." com sucesso!</h1>";
                 } else {
-                    echo "<h1 style=".'"color: red"'."> Nenhum registro de Curso ".$acao."!</h1>";
+                    echo "<h1 style=".'"color: red"'."> Nenhum registro de Aluno ".$acao."!</h1>";
                 }
             } else {
                 die("Falha na gravação de dados!" . mysqli_error($link));

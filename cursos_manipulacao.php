@@ -28,7 +28,7 @@
                 $pagina[1]="cursos_inclusao.php";
                 $pagina[2]="cursos_alteracao.php";
                 $pagina[3]="cursos_exclusao.php";
-                
+
                 if (empty($tipo) or (!file_exists($pagina[$tipo]))) {
                   include "home.php";
                 } else {

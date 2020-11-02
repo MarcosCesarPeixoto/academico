@@ -22,6 +22,9 @@
             $sql = "select * from cursos where id_curso = '$id'";
             $cursos = mysqli_query($link, $sql);
 
+            echo var_dump($cursos);
+
+
             if (mysqli_connect_errno()) {
                 printf("Connect failed: %s\n", mysqli_connect_error());
                 exit();
@@ -79,5 +82,5 @@
                 
             </div>
         </form>
-    </body>       
+    </body>
 </html>
