@@ -10,12 +10,12 @@
     <body>
         <div id="principal">
             <div id="cabecalho">
-                <?php include "cabecalho.php" ?>
+                <?php include "../cabecalho.php" ?>
             </div>
 
             <div id="menu">
                 <?php include "menu.php" ?>
-            </div>
+            </div>    
 
             <div id="corpo">
               <?php  
@@ -23,12 +23,12 @@
                   $tipo=$_GET['tipo'];
                 } else {
                   $tipo='';
-                }
+                }  
 
-                $pagina[1]="professores_inclusao.php";
-                $pagina[2]="professores_alteracao.php";
-                $pagina[3]="professores_exclusao.php";
-                
+                $pagina[1]="cursos_inclusao.php";
+                $pagina[2]="cursos_alteracao.php";
+                $pagina[3]="cursos_exclusao.php";
+
                 if (empty($tipo) or (!file_exists($pagina[$tipo]))) {
                   include "home.php";
                 } else {
@@ -38,7 +38,7 @@
             </div>
 
             <div id="rodape">
-                <?php include "rodape.php" ?>
+                <?php include "../rodape.php" ?>
             </div>
         </div>
     </body>

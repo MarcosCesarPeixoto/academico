@@ -5,8 +5,8 @@
         <link rel="stylesheet" href="estilos.css">      
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
         <?php 
-          include_once("funcoes.php"); 
-          include_once("conexao.php");
+          include_once("../funcoes.php"); 
+          include_once("../conexao.php");
         ?>
     </head>
 
@@ -52,7 +52,7 @@
                exit;
             }
 
-            echo $sql;
+            // echo $sql;
             if (mysqli_query($link, $sql)) {
                 if (mysqli_affected_rows($link) > 0) {
                     echo "<h1> Aluno ".$acao." com sucesso!</h1>";

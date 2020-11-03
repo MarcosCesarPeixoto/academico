@@ -6,8 +6,8 @@
         <link rel="stylesheet" href="\css\estilos.css">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
         <?php 
-          include_once("funcoes.php"); 
-          include_once("conexao.php");
+          include_once("../funcoes.php"); 
+          include_once("../conexao.php");
         ?>
     </head>
 
@@ -22,8 +22,7 @@
             $sql = "select * from cursos where id_curso = '$id'";
             $cursos = mysqli_query($link, $sql);
 
-            echo var_dump($cursos);
-
+            // echo var_dump($cursos);
 
             if (mysqli_connect_errno()) {
                 printf("Connect failed: %s\n", mysqli_connect_error());

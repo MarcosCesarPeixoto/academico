@@ -24,6 +24,9 @@
                         exibirDataHora();
                     ?>
                 </td>
+                <td>
+                    <a href="logout.php">Sair</a>
+                </td>
             </tr>
         </table>
     </body>       

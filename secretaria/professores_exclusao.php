@@ -6,8 +6,8 @@
         <link rel="stylesheet" href="\css\estilos.css">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
         <?php 
-          include_once("funcoes.php"); 
-          include_once("conexao.php");
+          include_once("../funcoes.php"); 
+          include_once("../conexao.php");
         ?>
     </head>
 

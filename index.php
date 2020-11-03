@@ -13,31 +13,11 @@
                 <?php include "cabecalho.php" ?>
             </div>
 
-            <div id="menu">
-                <?php include "menu.php" ?>
+            <br><br><br>
+            <div>            
+                <?php include "login.php" ?>
             </div>    
-
-            <div id="corpo">
-              <?php  
-                if(isset($_GET['link'])){
-                  $link=$_GET['link'];
-                } else {
-                  $link='';
-                }  
-
-                $pagina[1]="home.php";
-                $pagina[2]="alunos_lista.php";
-                $pagina[3]="professores_lista.php";
-                $pagina[4]="cursos_lista.php";
-                $pagina[5]="disciplinas.php";
-                
-                if (empty($link) or (!file_exists($pagina[$link]))) {
-                  include "home.php";
-                } else {
-                  include $pagina[$link]; 
-                };
-              ?>
-            </div>
+            <br><br>
 
             <div id="rodape">
                 <?php include "rodape.php" ?>

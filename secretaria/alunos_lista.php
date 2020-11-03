@@ -6,8 +6,8 @@
         <link rel="stylesheet" href="\css\estilos.css">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
         <?php 
-          include_once("funcoes.php"); 
-          include_once("conexao.php");
+          include_once("../funcoes.php"); 
+          include_once("../conexao.php");
           date_default_timezone_set('America/Sao_Paulo');
         ?> 
         <!-- <title>SProgramação Web I</title> -->
@@ -20,30 +20,31 @@
         <table id="tabela-titulo">
           <tr>
             <td id="col-titulo-subpagina">
-              <h2 id="titulo-subpagina">Professores Cadastrados</h2>
+              <h2 id="titulo-subpagina">Alunos Cadastrados</h2>
             </td>
             <td id="col-btn-novo">
-              <a href="professores_manipulacao.php?tipo=1" class="btn btn-success">Incluir</a>
+              <a href="alunos_manipulacao.php?tipo=1" class="btn btn-success">Incluir Aluno</a>
             </td>
           </tr>
         </table>
 
         <?php
-          $sql = "select * from professor";
-          $professores = mysqli_query($link, $sql);
+          $sql = "select * from aluno";
+          $alunos = mysqli_query($link, $sql);
 
           if (mysqli_connect_errno()) {
               printf("Connect failed: %s\n", mysqli_connect_error());
               exit();
           }
 
-          if ($professores = mysqli_query($link, $sql)) {
-              if(mysqli_num_rows($professores) > 0) {
+          if ($alunos = mysqli_query($link, $sql)) {
+              if(mysqli_num_rows($alunos) > 0) {
                 echo "<table"." id="."'tabela-listas'"." border='1'>";
                 echo "<tr><td>Código</td>"
                     ."<td>Nome</td>"
                     ."<td>CPF</td>"
                     ."<td>Nascimento</td>"
+                    ."<td>Mãe</td>"
                     ."<td style=width:100px></td>"
                     ."<td style=width:100px></td>"
                     ."</tr>";
@@ -52,20 +53,21 @@
               }
 
               /* array associativo */
-              while ($row = mysqli_fetch_assoc($professores)) {
-                  $id = $row["id_prof"];
+              while ($row = mysqli_fetch_assoc($alunos)) {
+                  $id = $row["id_aluno"];
 
-                  echo "<tr><td>".$row["id_prof"]."</td>"
+                  echo "<tr><td>".$row["id_aluno"]."</td>"
                           ."<td>".$row["nome"]."</td>"
                           ."<td>".$row["cpf"]."</td>"
                           ."<td>".$row["data_nascimento"]."</td>"
-                          ."<td><a href='professores_manipulacao.php?tipo=2&id=$id'&>Abrir</a></td>"
-                          ."<td><a href='professores_manipulacao.php?tipo=3&id=$id'&>Excluir</a></td>"
+                          ."<td>".$row["mae"]."</td>"                          
+                          ."<td><a href='alunos_manipulacao.php?tipo=2&id=$id'&>Abrir</a></td>"
+                          ."<td><a href='alunos_manipulacao.php?tipo=3&id=$id'&>Excluir</a></td>"
                       ."</tr>";
               }
               echo "</table>";
 
-              mysqli_free_result($professores);
+              mysqli_free_result($alunos);
           }
         ?>
       </div>

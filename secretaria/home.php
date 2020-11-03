@@ -15,13 +15,14 @@
                     <br>
                     <tr>
                         <td id="icone-home">
-                            <a href="\professor\index.php"><img src="\imagens\professor.webp" alt="Professor"/></a>
+                            <!-- <a href="\professor\index.php"><img src="\imagens\professor.webp" alt="Professor"/></a> -->
+                            <a href="..\professor\index.php"><img src="\imagens\professor.webp" alt="Professor"/></a>                            
                         </td>
                         <td id="icone-home">
-                            <a href="\secretaria\index.php"><img src="\imagens\secretaria.png" alt="Secretaria"/></a>
+                            <a href="..\secretaria\index.php"><img src="\imagens\secretaria.png" alt="Secretaria"/></a>
                         </td>
                         <td id="icone-home">
-                            <a href="\aluno\index.php"><img src="\imagens\aluno.png" alt="Aluno"/></a>
+                            <a href="..\aluno\index.php"><img src="\imagens\aluno.png" alt="Aluno"/></a>
                         </td>
                     </tr>
                  </table>  

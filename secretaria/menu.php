@@ -10,15 +10,12 @@
         <nav>
             <ul>
                 <li><a href="index.php?link=1">Home</a></li>
-                <li><a href="index.php?link=2">Alunos</a></li>                
-                <li><a href="index.php?link=3">Professores</a></li>                
+                <li><a href="index.php?link=2">Alunos</a></li>
+                <li><a href="index.php?link=3">Professores</a></li>
                 <li><a href="index.php?link=4">Cursos</a></li>
                 <li><a href="index.php?link=5">Disciplinas</a></li>
-
-                <!-- <li><a href="index.php?link=2">Login</a></li>  -->
-                <!-- <li><a href="index.php?link=4">Consultar Clientes</a></li> -->
-                <!-- <li><a href="index.php?link=6">Consultar Professor</a></li> -->
+                <li><a href="..\logout.php">Sair</a></li>
             </ul>
         </nav>
-    </body>       
+    </body>
 </html>
